@@ -1,4 +1,5 @@
-********Cost-rate for an hybrid inspection and age-based policy with inspector assignments***************
+********Cost-rate for an hybrid inspection and age-based policy with inspector assignments**
+
 Welcome to the source code for our app in Streamlit. This app computes the cost-rate for an hybrid inspection and age-based policy with inspector assignments. This application was developed by Victor Lima, Cristiano Cavalcante and Phuc Do.
 
 This tool aims to aid decision-makers in maintenance on the importance of the right choosing of maintenance actions, their times and the personel reponsible to them.
