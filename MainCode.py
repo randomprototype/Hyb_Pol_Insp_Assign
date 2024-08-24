@@ -25,7 +25,7 @@ def main():
     #O código abaixo insere o título, mas não centraliza.
     #st.title('KMT Policy Software')
     #O código abaixo centraliza e atribui cor
-    st.markdown("<h2 style='text-align: center; color: #306754;'>$K_{\\Delta_K}T$ + Inspector Assignment</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #306754;'>Hybrid Inspection and Age-Based Policy with Inspector Assignment</h2>", unsafe_allow_html=True)
     
     st.markdown("""
         <div style="background-color: #F3F3F3; padding: 10px; text-align: center;">
