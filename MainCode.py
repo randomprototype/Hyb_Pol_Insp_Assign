@@ -1,6 +1,12 @@
 """
-Augusto Rodrigues
-augustosjrodrigues@gmail.com
+Victor Hugo Resende Lima
+vhugoreslim@gmail.com
+
+Esse código necessita dos seguintes pacotes nas respectivas versões:
+Pillow==9.0.1
+scipy==1.7.3
+streamlit==1.5.0
+click==8
 """
 import streamlit as st
 import numpy as np
@@ -19,7 +25,7 @@ def main():
     #O código abaixo insere o título, mas não centraliza.
     #st.title('KMT Policy Software')
     #O código abaixo centraliza e atribui cor
-    st.markdown("<h2 style='text-align: center; color: #306754;'>{W, M} Policy Software</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #306754;'>$K_{\\Delta_K}T$ + Inspector Assignment</h2>", unsafe_allow_html=True)
     
     st.markdown("""
         <div style="background-color: #F3F3F3; padding: 10px; text-align: center;">
