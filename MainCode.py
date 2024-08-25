@@ -75,7 +75,7 @@ def main():
         Y=Y.split()
         for _ in range(0,len(Delta),1):
             Delta[_]=float(Delta[_])
-            Y[_]=float(Y[_])
+            Y[_]=int(Y[_])
         K=len(Delta)
         Delta.insert(0,0)
         Y.insert(0,-1)
