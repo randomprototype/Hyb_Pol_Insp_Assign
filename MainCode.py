@@ -333,13 +333,6 @@ def main():
         botao = st.button("Get cost-rate")
         if botao:
             CR=KD_KT(K, Delta, Y, T)
-            CRs=[]
-            for i in range(0,len(Y),1):
-                Assing=[]
-                for j in range(1,len(Y),1):
-                    Assing.append(i)
-                CRs.append(KD_KT(K, Delta, Assing, T))
-            
             ####################### EXECUTA OTIMIZADOR#$#################################
             st.write("---RESULT---")
             st.write("Cost-rate", CR)
