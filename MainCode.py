@@ -332,11 +332,9 @@ def main():
                     if (Used[i]>0):
                         TOTAL_EC+=FixedCosts[i]
                 return TOTAL_EC/TOTAL_EL
-            
-            #CR=KD_KT(K, Delta, Y, T)
-            ####################### EXECUTA OTIMIZADOR#$#################################
+            ################################################################
             st.write("---RESULT---")
-            st.write("Cost-rate", K, Delta, Y, T)
+            st.write("Cost-rate", CR=KD_KT(K, Delta, Y, T))
             
     if choice == menu[1]:
         st.header(menu[1])
