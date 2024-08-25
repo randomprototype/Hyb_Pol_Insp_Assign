@@ -336,7 +336,8 @@ def main():
             ####################### EXECUTA OTIMIZADOR#$#################################
             st.write("---RESULT---")
             #st.write("Cost-rate", CR)
-            st.write("Cost-rate", FixedCosts)
+            CR=5
+            st.write("Cost-rate", CR)
             
     if choice == menu[1]:
         st.header(menu[1])
