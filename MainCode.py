@@ -79,7 +79,10 @@ def main():
         Delta.insert(0,0)
         Y.insert(0,-1)
 
-        def KD_KT(K,delta,Y,T):
+        st.subheader("Click on botton below to run this application:")    
+        botao = st.button("Get cost-rate")
+        if botao:
+            def KD_KT(K,delta,Y,T):
             ############Defect arrival component 1#####################################
             def f01(x):
                 return (Beta1/Eta1)*((x/Eta1)**(Beta1-1))*np.exp(-(x/Eta1)**Beta1)
@@ -328,10 +331,6 @@ def main():
                 if (Used[i]>0):
                     TOTAL_EC+=FixedCosts[i]
             return TOTAL_EC/TOTAL_EL
-        
-        st.subheader("Click on botton below to run this application:")    
-        botao = st.button("Get cost-rate")
-        if botao:
             CR=KD_KT(K, Delta, Y, T)
             ####################### EXECUTA OTIMIZADOR#$#################################
             st.write("---RESULT---")
