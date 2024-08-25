@@ -42,11 +42,11 @@ def main():
         st.header(menu[0])
         st.subheader("Insert the parameter values below:")
         
-        st.markdown("Insert the characteristic life of the weak component (η<sub>1</sub>)", unsafe_allow_html=True)
-        Eta1 = st.number_input("", min_value=0.0, value=3.0)
+        #st.markdown("Insert the characteristic life of the weak component (η<sub>1</sub>)", unsafe_allow_html=True)
+        #Eta1 = st.number_input("", min_value=0.0, value=3.0)
         
-        st.markdown("Insert the shape parameter of the weak component (β<sub>1</sub>)", unsafe_allow_html=True)
-        Beta1=st.number_input("",min_value=0.0,value=3.0)
+        #st.markdown("Insert the shape parameter of the weak component (β<sub>1</sub>)", unsafe_allow_html=True)
+        #Beta1=st.number_input("",min_value=0.0,value=3.0)
 
         #st.markdown("Insert the characteristic life of the strong component (η<sub>2<sub>)", unsafe_allow_html=True)
         #Eta2=st.number_input("", min_value = 3.0, value = 12.0)
@@ -72,7 +72,17 @@ def main():
         #Cr=st.number_input("", min_value = 0.5, value = 1.5)
         
         #st.markdown("Insert cost of failure (C<sup>F<sup>)", unsafe_allow_html=True)
-        #Cf=st.number_input("", min_value = 5, value = 15) 
+        #Cf=st.number_input("", min_value = 5, value = 15)
+
+        eta=st.number_input("Insert the characteristic life of the component (𝜂)", min_value = 0.0, value = 25.0)
+        beta=st.number_input("Insert the shape parameter of the component (𝛽)", min_value = 0.0, value = 3.0) 
+        q=st.number_input("Insert the probability for replacement by opportunity (q)", min_value = 0.0, max_value=1.0, value = 0.4) 
+        s=st.number_input("Insert the Insert the time between slots (s)", min_value = 0.001, value = 1.0) 
+        taxa_lambda=st.number_input("Insert the rate of demands (\u03BB)", min_value = 0.0, value = 0.01) 
+        CO = st.number_input("Insert the cost of a replacement by opportunity (cO)", min_value=0.0, value=0.5)
+        CM = st.number_input("Insert the cost of a schedule preventive replacement (cM)", min_value=0.0, value=1.0)
+        CF=st.number_input("Insert the cost of a corrective replacement (cF)", min_value = 0.0, value = 2.0)
+        C_d=st.number_input("Insert the cost of an unmet demand (cd)", min_value = 0.0, value = 20000.0)
 
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
