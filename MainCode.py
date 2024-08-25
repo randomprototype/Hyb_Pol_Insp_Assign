@@ -335,7 +335,7 @@ def main():
             #CR=KD_KT(K, Delta, Y, T)
             ####################### EXECUTA OTIMIZADOR#$#################################
             st.write("---RESULT---")
-            st.write("Cost-rate", K)
+            st.write("Cost-rate", K, Delta, Y, T)
             
     if choice == menu[1]:
         st.header(menu[1])
