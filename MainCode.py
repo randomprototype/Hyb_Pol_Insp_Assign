@@ -55,6 +55,30 @@ def main():
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) ($C^R$)", min_value = 0.5, value = 1.5)
         Cf=st.number_input("Insert cost of failure ($C^F$)", min_value = 5, value = 15)
 
+        FixedCosts=FixedCosts.split()
+        Ci=Ci.split()
+        Alpha=Alpha.split()
+        Beta=Beta.split()
+        for _ in range(0,len(FixedCosts),1):
+            FixedCosts[_]=float(FixedCosts[_])
+            Ci[_]=float(Ci[_])
+            Alpha[_]=float(Alpha[_])
+            Beta[_]=float(Beta[_])
+        
+        st.subheader("Insert the variable values below:")
+        Delta=st.text_input("Insert the inspection moments ($\\Delta$)")
+        Y=st.text_input("Insert the sequence of inspectors ($Y$)")
+        T=st.number_input("Insert the age-based preventive action ($T$)")
+        
+        Delta=Delta.split()
+        Y=Y.split()
+        for _ in range(0,len(Delta),1):
+            Delta[_]=float(Delta[_])
+            Y[_]=float(Y[_])
+        K=len(Delta)
+        Delta.insert(0,0)
+        Y.insert(0,-1)
+        
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
         if botao:
