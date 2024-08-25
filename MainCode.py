@@ -347,7 +347,7 @@ v.h.r.lima@random.org.br
 
 c.a.v.cavalcante@random.org.br
 
-van-phuc.do@univ-lorraine.f
+van-phuc.do@univ-lorraine.fr
 
 ''' .format(chr(948), chr(948), chr(948), chr(948), chr(948)))       
     if choice==menu[2]:
