@@ -42,7 +42,9 @@ def main():
         st.header(menu[0])
         st.subheader("Insert the parameter values below:")
         
-        Eta1=st.number_input("Insert the characteristic life of the weak component (η<sub>1</sub>)", min_value = 0.0, value = 3.0)
+        #Eta1=st.number_input("Insert the characteristic life of the weak component (η<sub>1</sub>)", min_value = 0.0, value = 3.0)
+        st.markdown("Insert the characteristic life of the weak component (η<sub>1</sub>)", unsafe_allow_html=True)
+        Eta1 = st.number_input("", min_value=0.0, value=3.0)
         Beta1=st.number_input("Insert the shape parameter of the weak component (β_{1})", min_value = 0.0, value = 3.0)
         Eta2=st.number_input("Insert the characteristic life of the strong component (η_{2})", min_value = 3.0, value = 12.0)
         Beta2=st.number_input("Insert the shape parameter of the strong component (β_{2})", min_value = 0.0, value = 3.0) 
