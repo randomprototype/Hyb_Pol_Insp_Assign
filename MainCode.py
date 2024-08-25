@@ -334,7 +334,7 @@ def main():
                 return TOTAL_EC/TOTAL_EL
             ################################################################
             st.write("---RESULT---")
-            st.write("Cost-rate", CR=KD_KT(K, Delta, Y, T))
+            st.write("Cost-rate", KD_KT(K, Delta, Y, T))
             
     if choice == menu[1]:
         st.header(menu[1])
