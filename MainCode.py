@@ -48,31 +48,31 @@ def main():
         st.markdown("Insert the shape parameter of the weak component (β<sub>1</sub>)", unsafe_allow_html=True)
         Beta1=st.number_input("",min_value=0.0,value=3.0)
 
-        st.markdown("Insert the characteristic life of the strong component (η<sub>2<sub>)", unsafe_allow_html=True)
-        Eta2=st.number_input("", min_value = 3.0, value = 12.0)
+        #st.markdown("Insert the characteristic life of the strong component (η<sub>2<sub>)", unsafe_allow_html=True)
+        #Eta2=st.number_input("", min_value = 3.0, value = 12.0)
 
-        st.markdown("Insert the shape parameter of the strong component (β<sub>2<sub>)", unsafe_allow_html=True)
-        Beta2=st.number_input("", min_value = 0.0, value = 3.0)
+        #st.markdown("Insert the shape parameter of the strong component (β<sub>2<sub>)", unsafe_allow_html=True)
+        #Beta2=st.number_input("", min_value = 0.0, value = 3.0)
 
-        p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.15)
+        #p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.15)
 
-        Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0)
+        #Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0)
         
-        st.markdown("Insert the fixed costs of the inspectors (C<sup>H<sup>)", unsafe_allow_html=True)
-        FixedCosts=st.text_input("")
+        #st.markdown("Insert the fixed costs of the inspectors (C<sup>H<sup>)", unsafe_allow_html=True)
+        #FixedCosts=st.text_input("")
         
-        st.markdown("Insert the inspection costs of the inspectors (C<sup>I<sup>)", unsafe_allow_html=True)
-        Ci=st.text_input("")
+        #st.markdown("Insert the inspection costs of the inspectors (C<sup>I<sup>)", unsafe_allow_html=True)
+        #Ci=st.text_input("")
         
-        Alpha=st.text_input("Insert the false-positive values of the inspectors (α)")
+        #Alpha=st.text_input("Insert the false-positive values of the inspectors (α)")
         
-        Beta=st.text_input("Insert the false-negative values of the inspectors (ε)")
+        #Beta=st.text_input("Insert the false-negative values of the inspectors (ε)")
 
-        st.markdown("Insert cost of replacement (inspections and age-based) (C<sup>R<sup>)", unsafe_allow_html=True)
-        Cr=st.number_input("", min_value = 0.5, value = 1.5)
+        #st.markdown("Insert cost of replacement (inspections and age-based) (C<sup>R<sup>)", unsafe_allow_html=True)
+        #Cr=st.number_input("", min_value = 0.5, value = 1.5)
         
-        st.markdown("Insert cost of failure (C<sup>F<sup>)", unsafe_allow_html=True)
-        Cf=st.number_input("", min_value = 5, value = 15) 
+        #st.markdown("Insert cost of failure (C<sup>F<sup>)", unsafe_allow_html=True)
+        #Cf=st.number_input("", min_value = 5, value = 15) 
 
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
