@@ -68,7 +68,7 @@ def main():
         
         st.subheader("Insert the variable values below:")
         Delta=st.text_input("Insert the inspection moments (Δ)", value="1.5 2 4.5 6 10.5")
-        Y=st.text_input("Insert the sequence of inspectors (Y)", value="0 0 0 0 0")
+        Y=st.text_input("Insert the sequence of inspectors (Y)", value="1 1 1 1 1")
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
         
         Delta=Delta.split()
@@ -76,6 +76,7 @@ def main():
         for _ in range(0,len(Delta),1):
             Delta[_]=float(Delta[_])
             Y[_]=int(Y[_])
+            Y[_]-=1
         K=len(Delta)
         Delta.insert(0,0)
         Y.insert(0,-1)
