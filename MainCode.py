@@ -89,13 +89,12 @@ def main():
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
             Delta.append(col.number_input(f"Insp. Mom. (Δ{i+1})", min_value=0.0, value=0.0, key=f"Delta_{i}"))
-            Y.append(col.number_input(f"Rep. Assgn. (Y{i+1})", min_value=1, max_value=len(columns), value=1, step=1, key=f"Y_{i}"))
+            Y.append(col.number_input(f"Rep. Assgn. (Y{i+1})", min_value=1, max_value=len(columns), value=1, step=1, key=f"Y_{i}")-1)
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
+        
 
         
         st.subheader("Click on botton below to run this application:")    
-        st.write("---RESULT---")
-        st.write("Cost-rate", Y)
         botao = st.button("Get cost-rate")
         if botao:
             def KD_KT(K,delta,Y,T):
