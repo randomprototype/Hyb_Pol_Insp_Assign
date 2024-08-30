@@ -75,10 +75,11 @@ def main():
         Beta=[]
         columns = st.columns(st.session_state.num_columns)
 
-        columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
-        columns[1].text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
-        #columns[2].text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
-        #columns[2].text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
+        for i, col in enumerate(columns):
+            FixedCosts.append(col.number_input(f"Insert the fixed costs of the inspectors (C\u02b0) - Inspector {i+1}", min_value=0.0, value=0.1))
+            Ci.append(col.number_input(f"Insert the inspection costs of the inspectors (C\u2071) - Inspector {i+1}", min_value=0.0, value=0.15))
+            Alpha.append(col.number_input(f"Insert the false-positive values of the inspectors (α) - Inspector {i+1}", min_value=0.0, value=0.1))
+            Beta.append(col.number_input(f"Insert the false-negative values of the inspectors (ε) - Inspector {i+1}", min_value=0.0, value=0.05))
         
         st.subheader("Insert the variable values below:")
         Delta=st.text_input("Insert the inspection moments (Δ)", value="1.5 2 4.5 6 10.5")
