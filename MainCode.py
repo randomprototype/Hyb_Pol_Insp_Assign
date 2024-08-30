@@ -94,6 +94,8 @@ def main():
 
         
         st.subheader("Click on botton below to run this application:")    
+        st.write("---RESULT---")
+        st.write("Cost-rate", Y)
         botao = st.button("Get cost-rate")
         if botao:
             def KD_KT(K,delta,Y,T):
