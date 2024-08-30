@@ -66,15 +66,15 @@ def main():
         columns[2].text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
         columns[2].text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
         
-        FixedCosts=FixedCosts.split()
-        Ci=Ci.split()
-        Alpha=Alpha.split()
-        Beta=Beta.split()
-        for _ in range(0,len(FixedCosts),1):
-            FixedCosts[_]=float(FixedCosts[_])
-            Ci[_]=float(Ci[_])
-            Alpha[_]=float(Alpha[_])
-            Beta[_]=float(Beta[_])
+        #FixedCosts=FixedCosts.split()
+        #Ci=Ci.split()
+        #Alpha=Alpha.split()
+        #Beta=Beta.split()
+        #for _ in range(0,len(FixedCosts),1):
+        #    FixedCosts[_]=float(FixedCosts[_])
+        #    Ci[_]=float(Ci[_])
+        #    Alpha[_]=float(Alpha[_])
+        #    Beta[_]=float(Beta[_])
         
         st.subheader("Insert the variable values below:")
         Delta=st.text_input("Insert the inspection moments (Δ)", value="1.5 2 4.5 6 10.5")
