@@ -52,13 +52,13 @@ def main():
         st.subheader("Insert the parameter values below:")
         
         Eta1=st.number_input("Insert the characteristic life of the weak component (η\u2081)", min_value = 0.0, value = 3.0)
-        Beta1=st.number_input("Insert the shape parameter of the weak component (β\u2082)", min_value = 0.0, value = 2.5)
+        Beta1=st.number_input("Insert the shape parameter of the weak component (β\u2082)", min_value = 1.0, max_value=5.0, value = 2.5)
         Eta2=st.number_input("Insert the characteristic life of the strong component (η\u2081)", min_value = 3.0, value = 18.0)
-        Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 0.0, value = 5.0)
+        Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 1.0, max_value=5.0, value = 5.0)
         p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.10)
         Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0)
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0)
-        Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 5.0, value = 10.0)
+        Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 1.0, value = 10.0)
         
         col1, col2 = st.columns(2)
 
