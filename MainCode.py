@@ -42,7 +42,7 @@ def main():
     if choice == menu[0]:
         st.header(menu[0])
         if 'num_columns' not in st.session_state:
-            st.session_state.num_columns = 3
+            st.session_state.num_columns = 2
         def add_column():
             st.session_state.num_columns += 1
         
@@ -57,7 +57,7 @@ def main():
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0)
         Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 5, value = 10)
         
-        st.button("Add Column", on_click=add_column)
+        st.button("Add Repairperson", on_click=add_column, help="You should add columns to the parameters of the repairperson as you want (each column is related to one repairperson).")
         columns = st.columns(st.session_state.num_columns)
 
         columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
