@@ -49,13 +49,20 @@ def main():
         Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 0.0, value = 3.0) 
         p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.15)
         Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0)
-        FixedCosts=st.text_input("Insert the fixed costs of the inspectors (C\u02b0)", value = "0.1 0.1")
-        Ci=st.text_input("Insert the inspection costs of the inspectors (C\u2071)", value = "0.1 0.15")
-        Alpha=st.text_input("Insert the false-positive values of the inspectors (α)", value = "0.1 0.05")
-        Beta=st.text_input("Insert the false-negative values of the inspectors (ε)", value = "0.1 0.05")
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0)
         Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 5, value = 10)
-
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            FixedCosts = st.text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
+        
+        with col2:
+            Ci = st.text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
+        
+        with col3:
+            Alpha = st.text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
+            Beta = st.text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
+        
         FixedCosts=FixedCosts.split()
         Ci=Ci.split()
         Alpha=Alpha.split()
