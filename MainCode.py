@@ -82,17 +82,21 @@ def main():
             Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"))
             Beta.append(col.number_input(f"False-Negative Values (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}"))
 
+        def subscript_index(index):
+            return f"<sub>{index}</sub>"
+        
+        
         Delta=[0]
         Y=[-1]
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
-            Delta.append(col.number_input(f"Insp. Mom. (Δ{i+1})", min_value=0.0, value=0.0, key=f"Delta_{i}"))
-            Y.append(col.number_input(f"Rep. Assgn. (Y{i+1})", min_value=1, max_value=len(columns), value=1, step=1, key=f"Y_{i}")-1)
+            col.markdown(f"Insp. Mom. (Δ{subscript_index(i+1)})")
+            Delta.append(col.number_input("", min_value=0.0, value=0.0, key=f"Delta_{i}"))
+            col.markdown(f"Rep. Assgn. (Y{subscript_index(i+1)})")
+            Y.append(col.number_input("", min_value=1, max_value=K, value=1, step=1, key=f"Y_{i}") - 1)
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
-        
-
         
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
