@@ -41,6 +41,14 @@ def main():
     
     if choice == menu[0]:
         st.header(menu[0])
+        if 'num_columns' not in st.session_state:
+            st.session_state.num_columns = 3
+        def add_column():
+            st.session_state.num_columns += 1
+        
+        # Botão para adicionar uma coluna
+        st.button("Add Column", on_click=add_column)
+        
         st.subheader("Insert the parameter values below:")
         
         Eta1=st.number_input("Insert the characteristic life of the weak component (η\u2081)", min_value = 0.0, value = 3.0)
@@ -51,17 +59,12 @@ def main():
         Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0)
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0)
         Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 5, value = 10)
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            FixedCosts = st.text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
-        
-        with col2:
-            Ci = st.text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
-        
-        with col3:
-            Alpha = st.text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
-            Beta = st.text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
+        columns = st.columns(st.session_state.num_columns)
+
+        columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
+        columns[1].text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
+        columns[2].text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
+        columns[2].text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
         
         FixedCosts=FixedCosts.split()
         Ci=Ci.split()
