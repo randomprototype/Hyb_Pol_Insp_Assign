@@ -45,6 +45,9 @@ def main():
             st.session_state.num_columns = 2
         def add_column():
             st.session_state.num_columns += 1
+        def remove_column():
+            if st.session_state.num_columns > 1:
+                st.session_state.num_columns -= 1
         
         st.subheader("Insert the parameter values below:")
         
@@ -58,6 +61,8 @@ def main():
         Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 5, value = 10)
         
         st.button("Add Repairperson", on_click=add_column, help="You should add columns to the parameters of the repairperson as you want (each column is related to one repairperson).")
+        st.button("Remove Column", on_click=remove_column)
+        
         columns = st.columns(st.session_state.num_columns)
 
         columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
