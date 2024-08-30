@@ -87,7 +87,7 @@ def main():
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
         for i, col in enumerate(st.columns(K)):
-            col.write(f"**Column {i+1}:**")  # Texto acima dos campos
+            col.write(f"**{i+1}-th inspection:**")
             Delta.append(col.number_input(f"Δ (Delta) - Column {i+1}", min_value=0.0, value=0.0, key=f"Delta_{i}"))
             Y.append(col.number_input(f"Y - Column {i+1}", min_value=0.0, value=0.0, key=f"Y_{i}"))
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
