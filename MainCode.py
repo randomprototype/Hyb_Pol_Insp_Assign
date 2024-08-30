@@ -82,22 +82,16 @@ def main():
             Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"))
             Beta.append(col.number_input(f"False-Negative Values (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}"))
 
-        
+        Delta=[0]
+        Y=[-1]
         st.subheader("Insert the variable values below:")
-        Delta=st.text_input("Insert the inspection moments (Δ)", value="1.5 2 4.5 6 10.5")
-        Y=st.text_input("Insert the sequence of inspectors (Y)", value="1 1 1 1 1")
+        K=int(st.text_input("Insert the number of inspections (K)", value=4))
+        for i, col in enumerate(K):
+            col.write(f"**Inspection {i+1}:**")  # Texto acima dos campos
+            Delta.append(col.number_input(f"Δ", min_value=0.0, value=0.1, key=f"FixedCosts_{i}"))
+            Y.append(col.number_input(f"Y", min_value=0.0, value=0.15, key=f"Ci_{i}"))
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
         
-        Delta=Delta.split()
-        Y=Y.split()
-        for _ in range(0,len(Delta),1):
-            Delta[_]=float(Delta[_])
-            Y[_]=int(Y[_])
-            Y[_]-=1
-        K=len(Delta)
-        Delta.insert(0,0)
-        Y.insert(0,-1)
-
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
         if botao:
