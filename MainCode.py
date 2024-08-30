@@ -76,7 +76,7 @@ def main():
         columns = st.columns(st.session_state.num_columns)
 
         for i, col in enumerate(columns):
-            col.write(f"**Inspetor {i+1}:**")  # Texto acima dos campos
+            col.write(f"**Inspetor {i+1}:**") 
             FixedCosts.append(col.number_input(f"Fixed Costs (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}"))
             Ci.append(col.number_input(f"Inspection Costs (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}"))
             Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"))
@@ -86,7 +86,7 @@ def main():
         Y=[-1]
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
-        for i, col in enumerate(columns):
+        for i, col in enumerate(st.columns(K)):
             col.write(f"**Column {i+1}:**")  # Texto acima dos campos
             Delta.append(col.number_input(f"Δ (Delta) - Column {i+1}", min_value=0.0, value=0.0, key=f"Delta_{i}"))
             Y.append(col.number_input(f"Y - Column {i+1}", min_value=0.0, value=0.0, key=f"Y_{i}"))
