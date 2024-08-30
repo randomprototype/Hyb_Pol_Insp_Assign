@@ -76,10 +76,12 @@ def main():
         columns = st.columns(st.session_state.num_columns)
 
         for i, col in enumerate(columns):
-            FixedCosts.append(col.number_input(f"Insert the fixed costs of the inspectors (C\u02b0) - Inspector {i+1}", min_value=0.0, value=0.1))
-            Ci.append(col.number_input(f"Insert the inspection costs of the inspectors (C\u2071) - Inspector {i+1}", min_value=0.0, value=0.15))
-            Alpha.append(col.number_input(f"Insert the false-positive values of the inspectors (α) - Inspector {i+1}", min_value=0.0, value=0.1))
-            Beta.append(col.number_input(f"Insert the false-negative values of the inspectors (ε) - Inspector {i+1}", min_value=0.0, value=0.05))
+            col.write(f"**Inspetor {i+1}:**")  # Texto acima dos campos
+            FixedCosts.append(col.number_input(f"Fixed Costs (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}"))
+            Ci.append(col.number_input(f"Inspection Costs (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}"))
+            Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"))
+            Beta.append(col.number_input(f"False-Negative Values (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}"))
+
         
         st.subheader("Insert the variable values below:")
         Delta=st.text_input("Insert the inspection moments (Δ)", value="1.5 2 4.5 6 10.5")
