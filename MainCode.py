@@ -86,10 +86,10 @@ def main():
         Y=[-1]
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
-        for i, col in range(0,K,1):
-            col.write(f"**Inspection {i+1}:**")  # Texto acima dos campos
-            Delta.append(col.number_input(f"Δ", min_value=0.0, value=0.1, key=f"FixedCosts_{i}"))
-            Y.append(col.number_input(f"Y", min_value=0.0, value=0.15, key=f"Ci_{i}"))
+        for i, col in enumerate(columns):
+            col.write(f"**Column {i+1}:**")  # Texto acima dos campos
+            Delta.append(col.number_input(f"Δ (Delta) - Column {i+1}", min_value=0.0, value=0.0, key=f"Delta_{i}"))
+            Y.append(col.number_input(f"Y - Column {i+1}", min_value=0.0, value=0.0, key=f"Y_{i}"))
         T=st.number_input("Insert the age-based preventive action (T)", value=12.0)
         
         st.subheader("Click on botton below to run this application:")    
