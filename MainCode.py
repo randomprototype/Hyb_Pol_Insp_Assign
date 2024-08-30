@@ -69,11 +69,11 @@ def main():
         with col2:
             st.button("Remove Repairperson", on_click=remove_column)
         
-        #columns = st.columns(st.session_state.num_columns)
+        columns = st.columns(st.session_state.num_columns)
 
-        #columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
-        #columns[1].text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
-        #columns[2].text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
+        columns[0].text_input("Insert the fixed costs of the inspectors (C\u02b0)", value="0.1 0.1")
+        columns[1].text_input("Insert the inspection costs of the inspectors (C\u2071)", value="0.1 0.15")
+        columns[2].text_input("Insert the false-positive values of the inspectors (α)", value="0.1 0.05")
         #columns[2].text_input("Insert the false-negative values of the inspectors (ε)", value="0.1 0.05")
         
         #FixedCosts=FixedCosts.split()
