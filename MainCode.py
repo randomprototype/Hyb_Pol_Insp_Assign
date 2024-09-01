@@ -51,14 +51,14 @@ def main():
         
         st.subheader("Insert the parameter values below:")
         
-        Eta1=st.number_input("Insert the characteristic life of the weak component (η\u2081)", min_value = 0.0, value = 3.0, help="Since we are dealing with two kinds of components, this parameter defines the scale parameter for the Weibull distribution for defect arrival of the weaker component.")
-        Beta1=st.number_input("Insert the shape parameter of the weak component (β\u2082)", min_value = 1.0, max_value=5.0, value = 2.5, help="Since we are dealing with two kinds of components, this parameter defines the shape parameter for the Weibull distribution for defect arrival of the weaker component.")
-        Eta2=st.number_input("Insert the characteristic life of the strong component (η\u2081)", min_value = 3.0, value = 18.0, help="Since we are dealing with two kinds of components, this parameter defines the scale parameter for the Weibull distribution for defect arrival of the stronger component.")
-        Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 1.0, max_value=5.0, value = 5.0, help="Since we are dealing with two kinds of components, this parameter defines the shape parameter for the Weibull distribution for defect arrival of the stronger component.")
-        p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.10, help="This parameter defines the proportion of the weak component in the whole population of components.")
-        Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0, help="This parameter defines the rate of the Exponential distribution that dictates the transition from the defective to the failed states.")
-        Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0, help="This parameter defines the cost of preventive replacements (during inspections or when the age-based threshold is reached).")
-        Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 1.0, value = 10.0, help="This parameter defines the cost of failure of the component.")
+        Eta1=st.number_input("Insert the characteristic life of the weak component (η\u2081)", min_value = 0.0, value = 3.0, help="This parameter specifies the scale parameter for the Weibull distribution, representing the defect arrival for the weaker component.")
+        Beta1=st.number_input("Insert the shape parameter of the weak component (β\u2082)", min_value = 1.0, max_value=5.0, value = 2.5, help="This parameter specifies the shape parameter for the Weibull distribution, representing the defect arrival for the weaker component.")
+        Eta2=st.number_input("Insert the characteristic life of the strong component (η\u2081)", min_value = 3.0, value = 18.0, help="This parameter specifies the scale parameter for the Weibull distribution, representing the defect arrival for the stronger component.")
+        Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 1.0, max_value=5.0, value = 5.0, help="This parameter specifies the shape parameter for the Weibull distribution, representing the defect arrival for the stronger component.")
+        p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.10, help="This parameter indicates the proportion of the weaker component within the total population of components.")
+        Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0, help="This parameter defines the rate of the Exponential distribution, which governs the transition from the defective to the failed state of a component.")
+        Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0, help="This parameter represents the cost associated with preventive replacements, whether performed during inspections or when the age-based threshold is reached.")
+        Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 1.0, value = 10.0, help="This parameter represents the replacement cost incurred when a component fails.")
         
         col1, col2 = st.columns(2)
 
@@ -78,9 +78,9 @@ def main():
         for i, col in enumerate(columns):
             col.write(f"**Inspector {i+1}:**") 
             FixedCosts.append(col.number_input(f"Fixed Cost (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}", help="This parameter defines the cost related to the hiring of the repairperson."))
-            Ci.append(col.number_input(f"Inspection Cost (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}", help="This parameter defines the cost of conducing one inspection by this repairperson."))
-            Alpha.append(col.number_input(f"False-Positive Percentage (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}", help="This parameter defines the probability of, during the inspection, classifying the component as defective when in fact it is not for this repairperson."))
-            Beta.append(col.number_input(f"False-Negative Percentage (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}", help="This parameter defines the probability of, during the inspection, classifying the component as good when in fact it is not for this repairperson."))
+            Ci.append(col.number_input(f"Inspection Cost (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}", help="This parameter represents the cost of conducting a single inspection by this repairperson."))
+            Alpha.append(col.number_input(f"False-Positive Percentage (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}", help="This parameter defines the probability that, during an inspection, the repairperson will incorrectly classify a component as defective when it is actually not."))
+            Beta.append(col.number_input(f"False-Negative Percentage (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}", help="This parameter defines the probability that, during an inspection, the repairperson will incorrectly classify a component as good when it is actually defective."))
         
         Delta=[0]
         Y=[-1]
