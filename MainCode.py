@@ -15,7 +15,6 @@ from streamlit import cli as stcli
 from scipy.integrate import quad #Single integral
 from scipy.integrate import dblquad
 from PIL import Image
-import random
 
 def main():
     #criando 3 colunas
@@ -91,7 +90,7 @@ def main():
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
             Delta.append(col.number_input("Insp. Mom. (Δ)", min_value=MinDelta, value=MinDelta+2.0, key=f"Delta_{i}"))
-            Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=random.randint(1,2), step=1, key=f"Y_{i}") - 1)
+            Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=1, step=1, key=f"Y_{i}") - 1)
             MinDelta=Delta[-1]
         T = st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value=Delta[-1] + 2.0)
         
