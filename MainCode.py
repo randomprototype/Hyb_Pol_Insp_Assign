@@ -56,7 +56,7 @@ def main():
         Eta2=st.number_input("Insert the characteristic life of the strong component (η\u2081)", min_value = 3.0, value = 18.0, help="Since we are dealing with two kinds of components, this parameter defines the scale parameter for the Weibull distribution for defect arrival of the stronger component.")
         Beta2=st.number_input("Insert the shape parameter of the strong component (β\u2082)", min_value = 1.0, max_value=5.0, value = 5.0, help="Since we are dealing with two kinds of components, this parameter defines the shape parameter for the Weibull distribution for defect arrival of the stronger component.")
         p=st.number_input("Insert the mixture parameter (p)", min_value = 0.0, value = 0.10, help="This parameter defines the proportion of the weak component in the whole population of components.")
-        Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0, help="This parameter defines the ")
+        Lambda=st.number_input("Insert the rate of the exponential distribution for delay-time (λ)", min_value = 0.0, value = 2.0, help="This parameter defines the rate of the Exponential distribution that dictates the transition from the defective to the failed states.")
         Cr=st.number_input("Insert cost of replacement (inspections and age-based) (C\u02b3)", min_value = 0.5, value = 1.0, help="This parameter defines the cost of preventive replacements (during inspections or when the age-based threshold is reached).")
         Cf=st.number_input("Insert cost of failure (C\u1da0)", min_value = 1.0, value = 10.0, help="This parameter defines the cost of failure of the component.")
         
@@ -77,10 +77,10 @@ def main():
 
         for i, col in enumerate(columns):
             col.write(f"**Inspetor {i+1}:**") 
-            FixedCosts.append(col.number_input(f"Fixed Costs (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}"))
-            Ci.append(col.number_input(f"Inspection Costs (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}"))
-            Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"))
-            Beta.append(col.number_input(f"False-Negative Values (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}"))
+            FixedCosts.append(col.number_input(f"Fixed Costs (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}", help="This parameter defines the cost related to the hiring of the repairperson."))
+            Ci.append(col.number_input(f"Inspection Costs (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}", help="This parameter defines the cost of conducing one inspection by this repairperson."))
+            Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}"), help="This parameter defines the probability of, during the inspection, classifying the component as defective when in fact it is not for this repairperson.")
+            Beta.append(col.number_input(f"False-Negative Values (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}"), help="This parameter defines the probability of, during the inspection, classifying the component as good when in fact it is not for this repairperson.")
         
         Delta=[0]
         Y=[-1]
