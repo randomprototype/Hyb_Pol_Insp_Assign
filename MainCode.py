@@ -76,7 +76,7 @@ def main():
         columns = st.columns(st.session_state.num_columns)
 
         for i, col in enumerate(columns):
-            col.write(f"**Inspetor {i+1}:**") 
+            col.write(f"**Inspector {i+1}:**") 
             FixedCosts.append(col.number_input(f"Fixed Costs (C\u02b0)", min_value=0.0, value=0.1, key=f"FixedCosts_{i}", help="This parameter defines the cost related to the hiring of the repairperson."))
             Ci.append(col.number_input(f"Inspection Costs (C\u2071)", min_value=0.0, value=0.15, key=f"Ci_{i}", help="This parameter defines the cost of conducing one inspection by this repairperson."))
             Alpha.append(col.number_input(f"False-Positive Values (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}", help="This parameter defines the probability of, during the inspection, classifying the component as defective when in fact it is not for this repairperson."))
