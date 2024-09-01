@@ -88,9 +88,10 @@ def main():
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
-            Delta.append(col.number_input("Insp. Mom. (Δ)", min_value=0.0, value=2.00, key=f"Delta_{i}"))
+            min_value = Delta[-1] if Delta else 0.0
+            Delta.append(col.number_input("Insp. Mom. (Δ)", min_value=min_value, value=min_value + 2.0, key=f"Delta_{i}"))
             Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=1, step=1, key=f"Y_{i}") - 1)
-        T=st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value=12.0)
+        T = st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value=Delta[-1] + 2.0)
         
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
