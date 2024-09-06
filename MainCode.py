@@ -23,15 +23,13 @@ def main():
     #st.sidebar.image("randomen.png", use_column_width=True)
     #inserindo na coluna 2
     col2.image(foto, use_column_width=True)
-    #O código abaixo insere o título, mas não centraliza.
-    #st.title('KMT Policy Software')
     #O código abaixo centraliza e atribui cor
     st.markdown("<h2 style='text-align: center; color: #306754;'>Hybrid Inspection and Age-Based Policy with Inspector Assignment</h2>", unsafe_allow_html=True)
     
     st.markdown("""
         <div style="background-color: #F3F3F3; padding: 10px; text-align: center;">
           <p style="font-size: 20px; font-weight: bold;">A Delay-Time Model for Non-Periodic Inspection Intervals and Inspector Team Assignment</p>
-          <p style="font-size: 15px;">By: Victor H. R. Lima, Cristiano A. V. Cavalcante & Phuc Do</p>
+          <p style="font-size: 15px;">By: Victor H. R. Lima & Cristiano A. V. Cavalcante</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -361,8 +359,6 @@ def main():
 v.h.r.lima@random.org.br
 
 c.a.v.cavalcante@random.org.br
-
-van-phuc.do@univ-lorraine.fr
 
 ''' .format(chr(948), chr(948), chr(948), chr(948), chr(948)))       
     if choice==menu[2]:
