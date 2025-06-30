@@ -80,17 +80,16 @@ def main():
             Alpha.append(col.number_input(f"False-Positive Percentage (α)", min_value=0.0, value=0.1, key=f"Alpha_{i}", help="This parameter defines the probability that, during an inspection, the repairperson will incorrectly classify a component as defective when it is actually not."))
             Beta.append(col.number_input(f"False-Negative Percentage (ε)", min_value=0.0, value=0.05, key=f"Beta_{i}", help="This parameter defines the probability that, during an inspection, the repairperson will incorrectly classify a component as good when it is actually defective."))
         
-        Delta=[0]
         Y=[-1]
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=4))
         delta=st.text_input("Insert the inspection moments (Δ), following the example below",value="2,00 4,00 8,00 10,00", key=f"Delta")
         Delta=[float(x.replace(",", ".")) for x in delta.split()]
+        Delta.insert(0,0)
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
             Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=1, step=1, key=f"Y_{i}") - 1)
         T = st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value= 12.0)
-        st.write(str(Delta))
         
         st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
