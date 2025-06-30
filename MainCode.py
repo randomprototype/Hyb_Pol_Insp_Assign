@@ -83,7 +83,7 @@ def main():
         Delta=[0]
         Y=[-1]
         st.subheader("Insert the variable values below:")
-        K=int(st.text_input("Insert the number of inspections (K)", value=3))
+        K=int(st.text_input("Insert the number of inspections (K)", value=4))
         delta=st.text_input("Insert the inspection moments (Δ), following the example below",value="2.00 4.00 8.00 10.00", key=f"Delta")
         Delta=[float(x.replace(",", ".")) for x in delta.split()]
         for i, col in enumerate(st.columns(K)):
