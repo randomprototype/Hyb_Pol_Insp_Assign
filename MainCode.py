@@ -84,12 +84,11 @@ def main():
         Y=[-1]
         st.subheader("Insert the variable values below:")
         K=int(st.text_input("Insert the number of inspections (K)", value=3))
-        MinDelta=0.00
+        delta=st.text_input("Insert the inspection moments (Δ), following the example below",value="2.00 4.00 8.00 10.00", key=f"Delta")
+        Delta=[float(x.replace(",", ".")) for x in delta.split()]
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
-            Delta.append(col.number_input("Insp. Mom. (Δ)", min_value=MinDelta, value=0.00, key=f"Delta_{i}"))
             Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=1, step=1, key=f"Y_{i}") - 1)
-            MinDelta=Delta[-1]
         T = st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value= 12.0)
         
         st.subheader("Click on botton below to run this application:")    
