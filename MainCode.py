@@ -83,7 +83,7 @@ def main():
         Delta=[0]
         Y=[-1]
         st.subheader("Insert the variable values below:")
-        K=int(st.text_input("Insert the number of inspections (K)", value=4))
+        K=int(st.text_input("Insert the number of inspections (K)", value=3))
         MinDelta=0.00
         for i, col in enumerate(st.columns(K)):
             col.write(f"**{i+1}-th inspection:**")
