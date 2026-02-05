@@ -91,7 +91,6 @@ def main():
             Y.append(col.number_input("Rep. Assgn. (Y)", min_value=1, max_value=len(FixedCosts), value=1, step=1, key=f"Y_{i}") - 1)
         T = st.number_input("Insert the moment for the age-based preventive action (T)", min_value=Delta[-1], value= 12.0)
         
-        st.subheader("Click on botton below to run this application:")    
         botao = st.button("Get cost-rate")
         if botao:
             def KD_KT(K,delta,Y,T):
